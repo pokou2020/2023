@@ -21,7 +21,7 @@ class HomeScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.all(defaultSize! * 2), 
+              padding: EdgeInsets.all(defaultSize! * 2), //20
               child: Text(
                 "Browse by Categories",
               ),
