@@ -13,14 +13,14 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double? defaultSize = SizeConfig.defaultSize;
-    // It enables scrolling
+   
     return SingleChildScrollView(
       child: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
-              padding: EdgeInsets.all(defaultSize !* 2), //20
+              padding: EdgeInsets.all(defaultSize !* 2), 
               child: Text(
                  "Browse by Categories", 
               ),
@@ -33,10 +33,10 @@ class Body extends StatelessWidget {
             ),
             Divider(height: 5),
             Padding(
-              padding: EdgeInsets.all(defaultSize * 2), //20
+              padding: EdgeInsets.all(defaultSize * 2), 
               child: Text( "Recommands For You"),
             ),
-            // Right Now product is our demo product
+          
             FutureBuilder(
               future: fetchProducts(),
               builder: (context, snapshot) {

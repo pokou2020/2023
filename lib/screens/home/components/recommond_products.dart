@@ -12,19 +12,19 @@ class RecommandProducts extends StatelessWidget {
     required Key key,
     required this.products,
   }) : super(key: key);
-  // Because our Api provie us list of products
+  
   final List<Product> products;
 
   @override
   Widget build(BuildContext context) {
     double? defaultSize = SizeConfig.defaultSize;
     return Padding(
-      padding: EdgeInsets.all(defaultSize !* 2), //20
+      padding: EdgeInsets.all(defaultSize !* 2),
       child: GridView.builder(
-        // We just turn off grid view scrolling
+       
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
-        // just for demo
+        
         itemCount: products.length,
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount:

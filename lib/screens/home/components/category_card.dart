@@ -8,7 +8,7 @@ import '../../../size_config.dart';
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
     required Key key,
-    // It means we have  to add category
+    
     required this.category,
   }) : super(key: key);
 
@@ -18,15 +18,15 @@ class CategoryCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double? defaultSize = SizeConfig.defaultSize;
     return Padding(
-      padding: EdgeInsets.all(defaultSize !* 2), //20
+      padding: EdgeInsets.all(defaultSize !* 2), 
       child: SizedBox(
-        width: defaultSize * 20.5, //205
+        width: defaultSize * 20.5,
         child: AspectRatio(
           aspectRatio: 0.83,
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: <Widget>[
-              // This is custom Shape thats why we need to use ClipPath
+              
               ClipPath(
                 clipper: CategoryCustomShape(),
                 child: AspectRatio(

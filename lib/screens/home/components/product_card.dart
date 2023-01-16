@@ -21,7 +21,7 @@ class ProductCard extends StatelessWidget {
     return GestureDetector(
       //onTap: pres(),
       child: Container(
-        width: defaultSize! * 14.5, //145
+        width: defaultSize! * 14.5, 
         decoration: BoxDecoration(
           color: kSecondaryColor,
           borderRadius: BorderRadius.circular(30),
