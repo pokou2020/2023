@@ -4,7 +4,7 @@ class Category {
 
   Category({required this.id, required this.title, required this.image, required this.numOfProducts});
 
-  // It creates an Category from JSON
+
   factory Category.fromJson(Map<String, dynamic> json) {
     return Category(
       id: json["id"],
@@ -15,7 +15,7 @@ class Category {
   }
 }
 
-// Our demo category
+
 Category category = Category(
   id: "1",
   title: "Armchair",

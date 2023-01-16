@@ -27,7 +27,7 @@ class ProductInfo extends StatelessWidget {
             Text(
               product.title,
               style: TextStyle(
-                fontSize: defaultSize * 2.4, //24
+                fontSize: defaultSize * 2.4, 
                 fontWeight: FontWeight.bold,
                 letterSpacing: -0.8,
                 height: 1.4,
@@ -38,12 +38,12 @@ class ProductInfo extends StatelessWidget {
             Text(
               "\$${product.price}",
               style: TextStyle(
-                fontSize: defaultSize* 1.6, //16
+                fontSize: defaultSize* 1.6, 
                 fontWeight: FontWeight.bold,
                 height: 1.6,
               ),
             ),
-            SizedBox(height: defaultSize* 2), //20
+            SizedBox(height: defaultSize* 2), 
             Text("Available Colors", style: lightTextStyle),
             Row(
               children: <Widget>[
@@ -72,7 +72,7 @@ class ProductInfo extends StatelessWidget {
       {required Color color, bool isActive = false}) {
     return Container(
       margin: EdgeInsets.only(top: defaultSize, right: defaultSize),
-      // For  fixed value we can use cont for better performance
+    
       padding: const EdgeInsets.all(5),
       height: defaultSize * 2.4,
       width: defaultSize * 2.4,

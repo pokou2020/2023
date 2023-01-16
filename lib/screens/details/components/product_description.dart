@@ -20,8 +20,8 @@ class ProductDescription extends StatelessWidget {
     return Container(
       constraints: BoxConstraints(minHeight: defaultSize! * 44),
       padding: EdgeInsets.only(
-        top: defaultSize * 9, //90
-        left: defaultSize * 2, //20
+        top: defaultSize * 9, 
+        left: defaultSize * 2, 
         right: defaultSize * 2,
       ),
       // height: 500,
