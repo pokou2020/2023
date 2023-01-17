@@ -26,7 +26,7 @@ class Product {
   }
 }
 
-
+// Our Demo Product
 Product product = Product(
   id: "1",
   price: 1600,

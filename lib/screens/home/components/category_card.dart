@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../components/title_text.dart';
 import '../../../constants.dart';
 import '../../../models/Categories.dart';
 import '../../../size_config.dart';
@@ -8,8 +7,7 @@ import '../../../size_config.dart';
 class CategoryCard extends StatelessWidget {
   const CategoryCard({
     required Key key,
-    
-    required this.category,
+  required this.category,
   }) : super(key: key);
 
   final Category category;
@@ -20,13 +18,13 @@ class CategoryCard extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(defaultSize !* 2), 
       child: SizedBox(
-        width: defaultSize * 20.5,
+        width: defaultSize * 20.5, 
         child: AspectRatio(
           aspectRatio: 0.83,
           child: Stack(
             alignment: Alignment.bottomCenter,
             children: <Widget>[
-              
+             
               ClipPath(
                 clipper: CategoryCustomShape(),
                 child: AspectRatio(
@@ -37,7 +35,7 @@ class CategoryCard extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: <Widget>[
-                        Text( category.title),
+                        Text(category.title),
                         SizedBox(height: defaultSize),
                         Text(
                           "${category.numOfProducts}+ Products",

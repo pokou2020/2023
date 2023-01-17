@@ -7,10 +7,9 @@ import '../../../size_config.dart';
 
 class ProductCard extends StatelessWidget {
   const ProductCard({
-    required Key key,
-   required this.product,
+    required this.product,
     required this.press,
-  }) : super(key: key);
+  }) ;
 
   final Product product;
   final Function press;
@@ -19,9 +18,11 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     double? defaultSize = SizeConfig.defaultSize;
     return GestureDetector(
-      //onTap: pres(),
+      onTap: (){
+        press();
+      },
       child: Container(
-        width: defaultSize! * 14.5, 
+        width: defaultSize !* 14.5, 
         decoration: BoxDecoration(
           color: kSecondaryColor,
           borderRadius: BorderRadius.circular(30),

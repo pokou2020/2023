@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:projet2023/constants.dart';
 import 'package:projet2023/screens/home/home_screen.dart';
 
-
 void main() {
   runApp(MyApp());
 }

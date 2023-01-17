@@ -16,7 +16,7 @@ class TitleText extends StatelessWidget {
     return Text(
       title,
       style: TextStyle(
-        fontSize: defaultSize! * 1.6, 
+        fontSize: defaultSize !* 1.6, //16
         fontWeight: FontWeight.bold,
       ),
     );

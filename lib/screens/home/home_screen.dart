@@ -1,73 +1,31 @@
 import 'package:flutter/material.dart';
+
 import 'package:projet2023/constants.dart';
+import 'package:projet2023/models/Product.dart';
 
-
-import 'package:projet2023/screens/details/components/body.dart';
-
-import '../../services/fetchCategories.dart';
-import '../../services/fetchProducts.dart';
 import '../../size_config.dart';
+import '../details/components/body.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-     double? defaultSize = SizeConfig.defaultSize;
+ 
     SizeConfig().init(context);
     return Scaffold(
       appBar: buildAppBar(),
-      body:SingleChildScrollView(
-      child: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(defaultSize! * 2), //20
-              child: Text(
-                "Browse by Categories",
-              ),
-            ),
-            FutureBuilder(
-              future: fetchCategories(),
-              builder: (context, snapshot) => snapshot.hasData
-                  ? Container()
-                  : Center(child: Image.asset("assets/ripple.gif")),
-            ),
-            Divider(height: 5),
-            Padding(
-              padding: EdgeInsets.all(defaultSize * 2), 
-              child: Text( "Recommands For You"),
-            ),
-      
-            FutureBuilder(
-              future: fetchProducts(),
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  return Container();
-                } else {
-                  return Center(child: Image.asset('assets/ripple.gif'));
-                }
-              },
-            ),
-          ],
-        ),
-      ),
-    ),
+      body: Body(product: product,),
     );
   }
 
   AppBar buildAppBar() {
     return AppBar(
       leading: IconButton(
-        icon: const Icon(Icons.menu,
-         
-        ),
+        icon: Icon(Icons.menu, color: Colors.black,),
         onPressed: () {},
       ),
       actions: <Widget>[
         IconButton(
-          icon: Icon(Icons.scanner,
-          
-          ),
+          icon: Icon(Icons.scanner, color: Colors.black,),
           onPressed: () {},
         ),
         Center(

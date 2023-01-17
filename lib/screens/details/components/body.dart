@@ -1,50 +1,49 @@
 import 'package:flutter/material.dart';
 
 
-import '../../../services/fetchCategories.dart';
-import '../../../services/fetchProducts.dart';
+import '../../../models/Product.dart';
 import '../../../size_config.dart';
-import '../../home/components/categories.dart';
-import '../../home/components/recommond_products.dart';
-
+import 'product_description.dart';
+import 'product_info.dart';
 
 class Body extends StatelessWidget {
+  final Product product;
+
+   Body({ required this.product, }) ;
   @override
   Widget build(BuildContext context) {
     double? defaultSize = SizeConfig.defaultSize;
-
     return SingleChildScrollView(
-      child: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+      child: SizedBox(
+        width: double.infinity,
+        height: SizeConfig.orientation == Orientation.landscape
+            ? SizeConfig.screenWidth
+            : SizeConfig.screenHeight !- AppBar().preferredSize.height,
+        child: Stack(
+         
           children: <Widget>[
-            Padding(
-              padding: EdgeInsets.all(defaultSize! * 2), //20
-              child: Text(
-                "Browse by Categories",
+            ProductInfo(product: product, ),
+            Positioned(
+              top: defaultSize !* 37.5,
+              left: 0,
+              right: 0,
+              child: ProductDescription(
+                product: product,
+                press: () {},
               ),
             ),
-            FutureBuilder(
-              future: fetchCategories(),
-              builder: (context, snapshot) => snapshot.hasData
-                  ? Container()
-                  : Center(child: Image.asset("assets/ripple.gif")),
-            ),
-            Divider(height: 5),
-            Padding(
-              padding: EdgeInsets.all(defaultSize * 2), //20
-              child: Text( "Recommands For You"),
-            ),
-      
-            FutureBuilder(
-              future: fetchProducts(),
-              builder: (context, snapshot) {
-                if (snapshot.hasData) {
-                  return Container();
-                } else {
-                  return Center(child: Image.asset('assets/ripple.gif'));
-                }
-              },
+            Positioned(
+              top: defaultSize * 9.5,
+              right: -defaultSize * 7.5,
+              child: Hero(
+                tag: product.id,
+                child: Image.network(
+                  product.image,
+                  fit: BoxFit.cover,
+                  height: defaultSize * 37.8, 
+                  width: defaultSize * 36.4,
+                ),
+              ),
             ),
           ],
         ),

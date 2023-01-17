@@ -15,7 +15,7 @@ class Category {
   }
 }
 
-
+// Our demo category
 Category category = Category(
   id: "1",
   title: "Armchair",

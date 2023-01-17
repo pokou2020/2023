@@ -6,10 +6,10 @@ import '../../../size_config.dart';
 
 class ProductDescription extends StatelessWidget {
   const ProductDescription({
-    required Key key,
+ 
     required this.product,
     required this.press,
-  }) : super(key: key);
+  }) ;
 
   final Product product;
   final Function press;
@@ -18,10 +18,10 @@ class ProductDescription extends StatelessWidget {
   Widget build(BuildContext context) {
     double? defaultSize = SizeConfig.defaultSize;
     return Container(
-      constraints: BoxConstraints(minHeight: defaultSize! * 44),
+      constraints: BoxConstraints(minHeight: defaultSize !* 44),
       padding: EdgeInsets.only(
-        top: defaultSize * 9, 
-        left: defaultSize * 2, 
+        top: defaultSize * 9, //90
+        left: defaultSize * 2, //20
         right: defaultSize * 2,
       ),
       // height: 500,
@@ -60,7 +60,8 @@ class ProductDescription extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                 ),
                 color: kPrimaryColor,
-                onPressed: press(),
+                onPressed: (){}//press
+                ,
                 child: Text(
                   "Add to Cart",
                   style: TextStyle(

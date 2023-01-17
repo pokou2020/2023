@@ -2,15 +2,15 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 
-
 import '../models/Product.dart';
 
 // Fetch our Products from API
 Future<List<Product>> fetchProducts() async {
-  dynamic apiUrl =
+  const String apiUrl =
       "https://5f210aa9daa42f001666535e.mockapi.io/api/products";
+      
 
-  final response = await http.get(apiUrl);
+  final response = await http.get(Uri.parse(apiUrl));
 
   if (response.statusCode == 200) {
     // If the server did return a 200 OK response,

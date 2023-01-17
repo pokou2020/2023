@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 
-
 import '../../../models/Product.dart';
 import '../../../size_config.dart';
 import '../../details/details_screen.dart';
@@ -9,9 +8,9 @@ import 'product_card.dart';
 
 class RecommandProducts extends StatelessWidget {
   const RecommandProducts({
-    required Key key,
+   
     required this.products,
-  }) : super(key: key);
+  }) ;
   
   final List<Product> products;
 
@@ -19,9 +18,9 @@ class RecommandProducts extends StatelessWidget {
   Widget build(BuildContext context) {
     double? defaultSize = SizeConfig.defaultSize;
     return Padding(
-      padding: EdgeInsets.all(defaultSize !* 2),
+      padding: EdgeInsets.all(defaultSize !* 2), 
       child: GridView.builder(
-       
+        
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
         
@@ -40,10 +39,10 @@ class RecommandProducts extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder: (context) => DetailsScreen(
-                      product: products[index], key: null!,
+                      product: products[index],
                     ),
                   ));
-            }, key: null!,),
+            }, ),
       ),
     );
   }
