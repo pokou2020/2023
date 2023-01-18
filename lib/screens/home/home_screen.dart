@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 
 import 'package:projet2023/constants.dart';
 import 'package:projet2023/models/Product.dart';
+import 'package:projet2023/screens/home/components/body.dart';
 
 import '../../size_config.dart';
-import '../details/components/body.dart';
+
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class HomeScreen extends StatelessWidget {
     SizeConfig().init(context);
     return Scaffold(
       appBar: buildAppBar(),
-      body: Body(product: product,),
+      body: Body(),
     );
   }
 

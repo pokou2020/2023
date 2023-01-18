@@ -38,7 +38,7 @@ class Body extends StatelessWidget {
             ),
             Divider(height: 5),
             Padding(
-              padding: EdgeInsets.all(defaultSize * 2), //20
+              padding: EdgeInsets.all(defaultSize * 2), 
               child: Text( "Recommands For You"),
             ),
             FutureBuilder(

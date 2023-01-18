@@ -20,11 +20,11 @@ class ProductDescription extends StatelessWidget {
     return Container(
       constraints: BoxConstraints(minHeight: defaultSize !* 44),
       padding: EdgeInsets.only(
-        top: defaultSize * 9, //90
-        left: defaultSize * 2, //20
+        top: defaultSize * 9, 
+        left: defaultSize * 2, 
         right: defaultSize * 2,
       ),
-      // height: 500,
+      
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -60,7 +60,9 @@ class ProductDescription extends StatelessWidget {
                   borderRadius: BorderRadius.circular(50),
                 ),
                 color: kPrimaryColor,
-                onPressed: (){}//press
+                onPressed: (){
+                  press();
+                }//
                 ,
                 child: Text(
                   "Add to Cart",
@@ -72,6 +74,7 @@ class ProductDescription extends StatelessWidget {
                 ),
               ),
             ),
+            
           ],
         ),
       ),

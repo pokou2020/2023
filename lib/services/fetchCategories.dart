@@ -16,7 +16,7 @@ Future<List<Category>> fetchCategories() async {
     List<Category> categories = (json.decode(response.body) as List)
         .map((data) => Category.fromJson(data))
         .toList();
-
+     print(categories);
     return categories;
   } else {
    
